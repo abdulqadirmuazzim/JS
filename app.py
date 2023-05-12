@@ -1,7 +1,11 @@
-import subprocess as sub
+# from pathlib import Path as p
 
-com = sub.run(["node", "test"], stderr=True)
-if com.returncode == 1:
-    get = sub.run(["g++", "new.c"])
-else:
-    print("Success, alhamdulillah")
+
+# first = p(r"C:\Users\King_Abdul")
+# com = first.iterdir()
+# for f in com:
+#     print(f.stem)
+
+# for num in range(1, 10001):
+#     print(f'The square of {num} is: {num**2}')
+
