@@ -1,11 +1,8 @@
-document.addEventListener("click", doit)
+let sd = document.getElementById('forms')
+let fie = document.getElementById("wen")
+let = document.getElementById("lis")
 
-function doit() {
-
-    let bibs = 0
-    while (bibs <= 100)
-        document.write("BIB", bibs, "counted")
-    bibs++
-}
-
-
+sd.addEventListener("submit", (e) => {
+    e.preventDefault()
+    console.log(fie.value)
+})
