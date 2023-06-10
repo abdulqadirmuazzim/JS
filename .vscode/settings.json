@@ -4,5 +4,9 @@
         "stdio.h": "c"
     },
     "C_Cpp.errorSquiggles": "enabled",
-    "python.analysis.typeCheckingMode": "off"
+    "python.analysis.typeCheckingMode": "off",
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "python.formatting.provider": "none"
 }

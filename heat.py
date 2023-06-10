@@ -16,13 +16,13 @@ c = float(input("the specific heat capacity: "))
 
 t = float(input("the temperature: "))
 
-if c == '':
+if c == "":
     C = float(input("Heat capacity: "))
-    Q = C*t
+    Q = C * t
 else:
-    Q = m*c*t
-    print(f'The quantity of heat is: {Q}C')
+    Q = m * c * t
+    print(f"The quantity of heat is: {Q}C")
 
-if m == '':
-    m = Q/c*t
+if m == "":
+    m = Q / c * t
     print("temperature is: ", m)

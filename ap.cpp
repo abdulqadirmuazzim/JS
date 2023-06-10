@@ -10,9 +10,13 @@ string str = "this is a test";
 bool ff = true;
 
 double sum = num + getit;
+
 int main()
 {
-    cout << "Salam! " << str << " and this is an example: \n\n";
-    cout << num << " + " << getit << " = " << sum << endl;
+    double x, y, z;
+    x = 3e-8;
+    y = 2e9;
+    z = 4.55e+2;
+    cout << (y <= z && x <= z);
     return 0;
 }
