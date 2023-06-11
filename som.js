@@ -1,5 +1,5 @@
-let sd = document.querySelector('#forms')
-let fie = document.querySelector("#wen")
+let sd = document.getElementById('forms')
+let fie = document.getElementById("wen")
 let list = document.querySelector("#lis")
 
 sd.addEventListener("submit", (e) => {
