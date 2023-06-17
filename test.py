@@ -17,4 +17,4 @@ for a in li:
     fin.submit()
 
 get.fullscreen_window()
-# time.sleep(10)
+time.sleep(10)

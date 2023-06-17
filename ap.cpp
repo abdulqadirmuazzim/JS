@@ -1,20 +1,31 @@
 #include <iostream>
-#include <string>
+#include <vector>
+
 using namespace std;
 
 int main()
 {
-    int name = 8;
-    for (int a = 0; a < 5; a++)
+    std::vector<int> list;
+    std::vector<int> made;
+
+    // size of list
+    int length = sizeof(made) / sizeof(int);
+
+    for (int a = 1; a <= 10; a++)
     {
-        switch (name)
+        list.push_back(a);
+        for (int b : list)
         {
-        case 1:
-            cout << "ssss\n";
-        case 2:
-            cout << "key";
-        default:
-            cout << "I get it now, using single quotes returns an error\n";
-        }
-    }
-}
+            if (a % b == 0)
+            {
+                made.push_back(b);
+            };
+        };
+
+        if (length == 2)
+        {
+            cout << a << " is a prime number!!\n";
+        };
+        made.clear();
+    };
+};
