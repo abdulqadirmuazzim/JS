@@ -28,4 +28,4 @@ int main()
         };
         made.clear();
     };
-};
+}
