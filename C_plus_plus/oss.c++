@@ -9,9 +9,10 @@ struct info
     char gender;
 };
 
-void func()
+void func(int ff)
 {
-    cout << "Testing this function..." << endl;
+    cout << "Testing this function...\n";
+    cout << ff * 3 << endl;
 }
 int main()
 {
@@ -42,6 +43,6 @@ int main()
     *coo = "Meat";
     cout << *coo << endl;
     cout << food << endl;
-    func();
+    func(22);
     return 0;
 }
