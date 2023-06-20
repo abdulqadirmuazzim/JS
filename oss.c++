@@ -8,6 +8,11 @@ struct info
     bool elegible;
     char gender;
 };
+
+void func()
+{
+    cout << "Testing this function..." << endl;
+}
 int main()
 {
     info p1;
@@ -28,12 +33,15 @@ int main()
     p3.gender = 'F';
     p3.elegible = true;
 
-    cout << "The following is a list of applicants:\n"
-         << "Name: " << p1.name << " Age: " << p1.age << " Elegible: " << p1.elegible << endl;
-    cout << "Name: " << p2.name << " Age: " << p2.age << " Elegible: " << p2.elegible << endl;
-    cout << "Name: " << p3.name << " Age: " << p3.age << " Elegible: " << p3.elegible << endl;
     string food = "Bread";
     string *ptr = &food;
-    cout << &ptr << endl;
+    string *coo = &food;
+    cout << *ptr << endl;
     cout << ptr << endl;
+    // Changing the value of 'coo' variable.
+    *coo = "Meat";
+    cout << *coo << endl;
+    cout << food << endl;
+    func();
+    return 0;
 }

@@ -1,24 +1,43 @@
-import pygame as pg
-import time
+# Example file showing a circle moving on screen
+import pygame
 
-pg.display.set_caption("A simple snake game")
-y, step, head = segments = [12, 16, 17]
+# pygame setup
+pygame.init()
+screen = pygame.display.set_mode((1280, 700))
+clock = pygame.time.Clock()
+running = True
+dt = 0
 
-n, apple = step, 99
+player_pos = pygame.Vector2(screen.get_width() / 2, screen.get_height() / 2)
 
-screen = pg.display.set_mode([225] * 2, pg.SCALED).fill
+while running:
+    # poll for events
+    # pygame.QUIT event means the user clicked X to close your window
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
 
-while segments.count(head) % 2 * head % n * (head & 240):
-    if e := pg.event.get(768):
-        step = (e[0].key % 4 * 17 + 15) % 49 - n
-    segments = segments[apple != head :] + [head + step]
+    # fill the screen with a color to wipe away anything from last frame
+    screen.fill("black")
 
-    screen("green")
-    if apple == head:
-        apple = segments[0]
-    for i, v in enumerate([apple] + segments):
-        screen("lavender" if i else "blue", ((v - 1) % n * y, (v - n) // n * y, y, y))
-        pg.display.flip()
-        head == step
-        pg.time.wait(100)
-time.sleep(20)
+    pygame.draw.circle(screen, "red", player_pos, 10)
+
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_w]:
+        player_pos.y -= 240 * dt
+    if keys[pygame.K_s]:
+        player_pos.y += 300 * dt
+    if keys[pygame.K_a]:
+        player_pos.x -= 300 * dt
+    if keys[pygame.K_d]:
+        player_pos.x += 300 * dt
+
+    # flip() the display to put your work on screen
+    pygame.display.flip()
+
+    # limits FPS to 60
+    # dt is delta time in seconds since last frame, used for framerate-
+    # independent physics.
+    dt = clock.tick(60) / 1000
+
+pygame.quit()

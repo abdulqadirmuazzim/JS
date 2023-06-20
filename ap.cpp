@@ -22,10 +22,11 @@ int main()
             };
         };
 
-        if (length == 2)
+        if (sizeof(made) / sizeof(int) == 2)
         {
             cout << a << " is a prime number!!\n";
         };
         made.clear();
+        // cout << length << endl;
     };
 }

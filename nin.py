@@ -1,23 +1,10 @@
-from pathlib import Path
-import os
-import subprocess as sub
+scr = [0, 0, 0, 0, 0]
+back = [0, 0, 0, 0, 0]
 
+pos = len(scr) - 1
+for i in range(len(scr)):
+    scr[pos] = 2
+    print("screen= ", scr)
+    scr[pos] = back[pos]
 
-way = Path(r"C:\Users\King_Abdul")
-
-find = way.iterdir()
-lis = []
-
-for a in find:
-    if a.is_dir():
-        lis.append(a.stem)
-
-try:
-    for d, i in enumerate(lis):
-        go = way / Path(i)
-        print(d)
-        for s in go.iterdir():
-            print(s)
-            continue
-except PermissionError:
-    print("not working")
+    pos -= 1
