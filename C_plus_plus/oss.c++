@@ -14,8 +14,10 @@ void func(int ff)
     cout << "Testing this function...\n";
     cout << ff * 3 << endl;
 }
+void come(string str);
 int main()
 {
+
     info p1;
     p1.name = "Abdulqadir";
     p1.age = 18;
@@ -44,5 +46,12 @@ int main()
     cout << *coo << endl;
     cout << food << endl;
     func(22);
+    come("Abdulqadir");
+
     return 0;
+}
+
+void come(string str)
+{
+    cout << "Salamualikum! " << str << ", how are you doing hope your doing fine.\n";
 }

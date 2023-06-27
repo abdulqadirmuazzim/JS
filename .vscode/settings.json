@@ -47,7 +47,7 @@
         "typeinfo": "cpp"
     },
     "C_Cpp.errorSquiggles": "enabled",
-    "python.analysis.typeCheckingMode": "off",
+    "python.analysis.typeCheckingMode": "basic",
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter"
     },

@@ -21,6 +21,7 @@ while running:
     screen.fill("black")
 
     pygame.draw.circle(screen, "red", player_pos, 10)
+    pl = pygame.image.load("python/punk/idel/1.png").convert()
 
     keys = pygame.key.get_pressed()
     if keys[pygame.K_w]:
@@ -38,6 +39,6 @@ while running:
     # limits FPS to 60
     # dt is delta time in seconds since last frame, used for framerate-
     # independent physics.
-    dt = clock.tick(60) / 1000
+    dt = clock.tick(24) / 1e3
 
 pygame.quit()
