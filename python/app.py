@@ -22,6 +22,7 @@ while running:
 
     pygame.draw.circle(screen, "red", player_pos, 10)
     pl = pygame.image.load("python/punk/idel/1.png").convert()
+    screen.blit(pl, (120, 342))
 
     keys = pygame.key.get_pressed()
     if keys[pygame.K_w]:

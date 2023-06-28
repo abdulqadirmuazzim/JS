@@ -3,38 +3,53 @@ import pygame as pg
 pg.init()
 time = pg.time.Clock()
 
-scr = pg.display.set_mode((800, 720))
+scr = pg.display.set_mode((1240, 620))
 run = True
-player = pg.image.load("python/punk/idel/1.png").convert_alpha()
-background = pg.image.load("python/back.jpg").convert_alpha()
+player = pg.image.load("python/punk/idel/1.png").convert()
+background = pg.image.load("python/back.jpg").convert()
 objs = []
 
 
-class Obj:
-    def __init__(self, img, hei, speed):
-        self.speed = speed
-        self.image = img
-        self.pos = player.get_rect().move(0, hei)
-
-    def move(self):
-        self.pos = self.pos.move(self.speed, 0)
-        if self.pos == self.pos.move(self.speed, 0):
-            self.pos.left = 0
+def size(img, scale, x, y):
+    w = img.get_width()
+    h = img.get_height()
+    obj = pg.transform.scale(img, (w * scale, h * scale))
+    scr.blit(obj, (x, y))
 
 
-for s in range(10):
-    o = Obj(player, s * 40, s)
+right = False
+left = False
+x = 200
+y = 220
 
-
+a = 0
+b = 0
 while run:
+    scr.fill("black")
+    # draw objects on screen.
+    size(background, 0.2, a, b)
+    size(player, 2, x, y)
+
+    # if right == True:
+    #     x += 2
+    # if left == True:
+    #     x -= 2
+
+    # events
     for event in pg.event.get():
         if event.type == pg.QUIT:
             pg.quit()
-    for o in objs:
-        scr.blit(background, o.pos, o.pos)
-    for o in objs:
-        o.move()
-        scr.blit(o.image, o.pos)
+    # keys input from user.
+    keys = pg.key.get_pressed()
+    if keys[pg.K_RIGHT] or keys[pg.K_4]:
+        x += 3
+    if keys[pg.K_LEFT] or keys[pg.K_6]:
+        x -= 3
+    if keys[pg.K_UP] or keys[pg.K_8]:
+        y -= 3
+    if keys[pg.K_DOWN] or keys[pg.K_5]:
+        y += 3
+
+    time.tick(200)
+
     pg.display.update()
-    pg.display.flip()
-    t2 = time.tick(60)
